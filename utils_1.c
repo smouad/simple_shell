@@ -28,6 +28,20 @@ int _putstr(char *str)
 }
 
 /**
+ * _strlen - Computes the length of a string
+ * @s: String to compute length of
+ * Return: Length of string
+ */
+size_t _strlen(const char *s)
+{
+    size_t len = 0;
+
+    while (s[len])
+        len++;
+    return (len);
+}
+
+/**
  * cut_line - Cuts a line when a # is found
  * @line: Line to cut
 */
@@ -37,7 +51,7 @@ void cut_line(char *line)
 
     while (line[i])
     {
-        if (line[i] == '#')
+        if (line[i] == '#' || line[i] == '\n')
         {
             line[i] = '\0';
             break;

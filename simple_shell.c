@@ -1,6 +1,18 @@
 #include "simple_shell.h"
 
-
+/**
+ * init_shell - Initializes the shell
+ * @shell: Shell structure
+ * @argv: Arguments
+ * @env: Environment variables
+ */
+void init_shell(t_shell *shell, char **argv, char **env)
+{
+    shell->argv = argv;
+    shell->env = env;
+    shell->line = NULL;
+    shell->args = NULL;
+}
 
 /**
  * main - Entry point
@@ -12,22 +24,22 @@
 int main(int argc, char **argv, char **env)
 {
     (void)argc;
-    (void)argv;
-    (void)env;
-    char *line;
-    // char **args;
+    t_shell shell;
     size_t len = 0;
 
-    line = NULL;
+    init_shell(&shell, argv, env);
     while (true)
     {
         _putstr("shell~$> ");
-        if (getline(&line, &len, stdin) == -1)
+        if (getline(&shell.line, &len, stdin) == -1)
         {
             _putstr("\n");
             break;
         }
-        if (line[0] == '\n')
+        if (shell.line[0] == '\n')
             continue;
+        cut_line(shell.line);
+        shell.args = _split(shell.line, ' ');
+        execute(&shell);
     }
 }
