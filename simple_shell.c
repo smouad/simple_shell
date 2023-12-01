@@ -41,5 +41,6 @@ int main(int argc, char **argv, char **env)
         cut_line(shell.line);
         shell.args = _split(shell.line, ' ');
         execute(&shell);
+        free(shell.args);
     }
 }

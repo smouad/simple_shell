@@ -32,12 +32,12 @@ void    init_shell(t_shell *shell, char **argv, char **env);
 int     _strncmp(const char *s1, const char *s2, size_t n);
 int     _strcmp(const char *s1, const char *s2);
 char    *_getenv(const char *name, char **env);
-int     execute(t_shell *shell);
+void    execute(t_shell *shell);
 char    *_strjoin(char const *s1, char const *s2);
 int     command_exists(char *cmd);
 int     is_path(char *cmd);
 int     getpath(t_shell *shell);
 void    print_env(t_shell *shell);
-int builtin(t_shell *shell);
+int     builtin(t_shell *shell);
 
 #endif /* SIMPLE_SHELL_H */
