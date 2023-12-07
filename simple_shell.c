@@ -21,7 +21,7 @@ void init_shell(t_shell *shell, char **argv, char **env)
  * @env: Environment variables
  * Return: 0 on success, 1 on failure
  */
-int main(int __unused argc, char **argv, char **env)
+int main(int __attribute__((unused)) argc, char **argv, char **env)
 {
     t_shell shell;
     size_t len = 0;
@@ -29,10 +29,10 @@ int main(int __unused argc, char **argv, char **env)
     init_shell(&shell, argv, env);
     while (true)
     {
-        _putstr("shell~$> ");
+        if (isatty(STDIN_FILENO))
+            _putstr("shell~$> ");
         if (getline(&shell.line, &len, stdin) == -1)
         {
-            _putstr("\n");
             break;
         }
         if (shell.line[0] == '\n')
@@ -42,4 +42,5 @@ int main(int __unused argc, char **argv, char **env)
         execute(&shell);
         free(shell.args);
     }
+    return (0);
 }

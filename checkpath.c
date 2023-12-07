@@ -52,7 +52,7 @@ int command_exists(char *cmd)
 */
 int is_path(char *cmd)
 {
-    if (cmd[0] == '/')
+    if (cmd[0] == '/' || cmd[0] == '.')
         return (0);
     return (1);
 }
