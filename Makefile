@@ -1,8 +1,8 @@
-NAME = shell
+NAME = hsh
 
 CC = gcc
 
-CFLAGS = -Wall -Wextra -Werror -fsanitize=address -g
+CFLAGS = -Wall -Werror -Wextra -pedantic -std=gnu89
 
 SRC = *.c
 

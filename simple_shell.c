@@ -21,9 +21,8 @@ void init_shell(t_shell *shell, char **argv, char **env)
  * @env: Environment variables
  * Return: 0 on success, 1 on failure
  */
-int main(int argc, char **argv, char **env)
+int main(int __unused argc, char **argv, char **env)
 {
-    (void)argc;
     t_shell shell;
     size_t len = 0;
 
