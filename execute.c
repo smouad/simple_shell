@@ -8,22 +8,27 @@
 void execute(t_shell *shell)
 {
     pid_t pid;
-    int status;
 
     if (builtin(shell) == 0)
         return ;
     if (getpath(shell) == 1)
     {
-        _putstr("./shell: No such file or directory\n");
+        _putstr_fd("./hsh: 1: ", 2);
+        _putstr_fd(shell->args[0], 2);
+        _putstr_fd(": not found\n", 2);
+        shell->status = 127;
+        exit(127);
         return ;
     }
     pid = fork();
     if (pid == 0)
     {
         if (execve(shell->args[0], shell->args, shell->env) == -1)
+        {
             return ;
+        }
     }
     else
-        wait(&status);
+        wait(&shell->status);
     return ;
 }

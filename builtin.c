@@ -13,7 +13,7 @@ int builtin(t_shell *shell)
         exit(0);
     if (_strcmp(shell->args[0], "env") == 0)
     {
-        print_env(shell);
+        print_env();
         return (0);
     }
     return (1);

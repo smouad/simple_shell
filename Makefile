@@ -2,7 +2,7 @@ NAME = hsh
 
 CC = gcc
 
-CFLAGS = -Wall -Werror -Wextra -pedantic -std=gnu89
+CFLAGS = -Wall -Werror -Wextra -pedantic -std=gnu89 #-fsanitize=address -g
 
 SRC = *.c
 

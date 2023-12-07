@@ -5,26 +5,25 @@
  * @c: Character to write
  * Return: 1 on success, -1 on error
  */
-int _putchar(char c)
+int _putchar(char c, int fd)
 {
-    return (write(1, &c, 1));
+    return (write(fd, &c, 1));
 }
 
 /**
- * _putstr - Prints a string
+ * _putstr_fd - Prints a string
  * @str: String to print
  * Return: Number of characters printed
  */
-int _putstr(char *str)
+void _putstr_fd(char *str, int fd)
 {
     int i = 0;
 
     while (str[i])
     {
-        _putchar(str[i]);
+        _putchar(str[i], fd);
         i++;
     }
-    return (i);
 }
 
 /**

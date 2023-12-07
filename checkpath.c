@@ -52,6 +52,8 @@ int command_exists(char *cmd)
 */
 int is_path(char *cmd)
 {
+    if (!cmd)
+        return (1);
     if (cmd[0] == '/' || cmd[0] == '.')
         return (0);
     return (1);
@@ -64,9 +66,11 @@ int is_path(char *cmd)
 */
 int getpath(t_shell *shell)
 {
-    char *path, **token, *tmp;
+    char *path, **token, *tmp, *cmd;
     int i = 0;
 
+    if (!shell->args[0])
+        return (0);
     if (is_path(shell->args[0]) == 0)
     {
         if (command_exists(shell->args[0]) == 0)
@@ -80,13 +84,14 @@ int getpath(t_shell *shell)
     while (token[i])
     {
         tmp = _strjoin(token[i], "/");
-        tmp = _strjoin(tmp, shell->args[0]);
-        if (command_exists(tmp) == 0)
+        cmd = _strjoin(tmp, shell->args[0]);
+        free(tmp);
+        if (command_exists(cmd) == 0)
         {
-            shell->args[0] = tmp;
+            shell->args[0] = cmd;
             return (0);
         }
-        free(tmp);
+        free(cmd);
         i++;
     }
     return (1);

@@ -30,7 +30,7 @@ int main(int __attribute__((unused)) argc, char **argv, char **env)
     while (true)
     {
         if (isatty(STDIN_FILENO))
-            _putstr("shell~$> ");
+            _putstr_fd("shell~$> ", 1);
         if (getline(&shell.line, &len, stdin) == -1)
         {
             break;
