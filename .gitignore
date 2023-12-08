@@ -1,4 +1,5 @@
 shell
 ./automated_checker
 allowed_functions
-simple_shell_tests/*
+*.bash
+*.py
