@@ -20,8 +20,6 @@ char **args;
 int status;
 }   t_shell;
 
-extern char **environ;
-
 /* prototypes */
 
 int     _putchar(char c, int fd);
@@ -39,7 +37,7 @@ char    *_strjoin(char const *s1, char const *s2);
 int     command_exists(char *cmd);
 int     is_path(char *cmd);
 int     getpath(t_shell *shell);
-void    print_env(void);
+void    print_env(t_shell *shell);
 int     builtin(t_shell *shell);
 
 #endif
