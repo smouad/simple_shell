@@ -1,9 +1,9 @@
 #include "simple_shell.h"
 
 /**
- * _getenv - Gets an environment variable
- * @name: Name of the variable
- * @env: Environment
+ * _strjoin - Gets an environment variable
+ * s1: Name of the variable
+ * s2: Environment
  * Return: Pointer to the variable, NULL if not found
 */
 char	*_strjoin(char const *s1, char const *s2)

@@ -40,7 +40,7 @@ int main(int __attribute__((unused)) argc, char **argv, char **env)
 			continue;
 		cut_line(shell.line);
 		shell.args = _split(shell.line, " \t\n");
-		/*free(shell.line);*/
+		free(shell.line);
 		execute(&shell);
 		free_array(shell.args);
 	}
