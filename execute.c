@@ -24,9 +24,6 @@ void execute(t_shell *shell)
 	{
 		if (execve(shell->args[0], shell->args, shell->env) == -1)
 		{
-			_putstr_fd("./hsh: 1: ", 2);
-			_putstr_fd(shell->args[0], 2);
-			_putstr_fd(": not found\n", 2);
 			shell->status = 127;
 			exit(127);
 		}

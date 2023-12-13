@@ -52,7 +52,7 @@ void cut_line(char *line)
 
 	while (line[i])
 	{
-		if (line[i] == '#')
+		if (line[i] == '#' || line[i] == '\n')
 		{
 			line[i] = '\0';
 			break;
