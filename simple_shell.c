@@ -31,7 +31,11 @@ int main(int __attribute__((unused)) argc, char **argv, char **env)
 	{
 		if (isatty(STDIN_FILENO))
 			_putstr_fd("shell~$> ", 1);
-		free(shell.line);
+		if (shell.line)
+		{
+			free(shell.line);
+			shell.line = NULL;
+		}
 		if (getline(&shell.line, &len, stdin) == -1)
 		{
 			free(shell.line);
