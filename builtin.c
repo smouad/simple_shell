@@ -11,7 +11,7 @@ int builtin(t_shell *shell)
 	{
 		free(shell->line);
 		free_array(shell->args);
-		exit(2);
+		exit(shell->status);
 	}
 	if (_strcmp(shell->args[0], "env") == 0)
 	{

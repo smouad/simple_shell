@@ -23,9 +23,7 @@ void execute(t_shell *shell)
 	if (pid == 0)
 	{
 		if (execve(shell->args[0], shell->args, shell->env) == -1)
-		{
 			return;
-		}
 	}
 	else
 		wait(&shell->status);
