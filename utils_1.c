@@ -7,7 +7,7 @@
  */
 int _putchar(char c, int fd)
 {
-    return (write(fd, &c, 1));
+	return (write(fd, &c, 1));
 }
 
 /**
@@ -17,13 +17,13 @@ int _putchar(char c, int fd)
  */
 void _putstr_fd(char *str, int fd)
 {
-    int i = 0;
+	int i = 0;
 
-    while (str[i])
-    {
-        _putchar(str[i], fd);
-        i++;
-    }
+	while (str[i])
+	{
+		_putchar(str[i], fd);
+		i++;
+	}
 }
 
 /**
@@ -33,11 +33,11 @@ void _putstr_fd(char *str, int fd)
  */
 size_t _strlen(const char *s)
 {
-    size_t len = 0;
+	size_t len = 0;
 
-    while (s[len])
-        len++;
-    return (len);
+	while (s[len])
+		len++;
+	return (len);
 }
 
 /**
@@ -46,15 +46,15 @@ size_t _strlen(const char *s)
 */
 void cut_line(char *line)
 {
-    int i = 0;
+	int i = 0;
 
-    while (line[i])
-    {
-        if (line[i] == '#' || line[i] == '\n')
-        {
-            line[i] = '\0';
-            break;
-        }
-        i++;
-    }
+	while (line[i])
+	{
+		if (line[i] == '#' || line[i] == '\n')
+		{
+			line[i] = '\0';
+			break;
+		}
+		i++;
+	}
 }

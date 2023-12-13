@@ -7,14 +7,16 @@
 */
 int builtin(t_shell *shell)
 {
-    if (_strcmp(shell->args[0], "exit") == 0)
-    {
-        exit(2);
-    }
-    if (_strcmp(shell->args[0], "env") == 0)
-    {
-        print_env(shell);
-        return (0);
-    }
-    return (1);
+	if (_strcmp(shell->args[0], "exit") == 0)
+	{
+		free(shell->line);
+		free_array(shell->args);
+		exit(2);
+	}
+	if (_strcmp(shell->args[0], "env") == 0)
+	{
+		print_env(shell);
+		return (0);
+	}
+	return (1);
 }

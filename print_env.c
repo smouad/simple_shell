@@ -6,13 +6,13 @@
 */
 void print_env(t_shell *shell)
 {
-    size_t i;
+	size_t i;
 
-    i = 0;
-    while (shell->env[i])
-    {
-        _putstr_fd(shell->env[i], 1);
-        _putchar('\n', 1);
-        i++;
-    }
+	i = 0;
+	while (shell->env[i])
+	{
+		_putstr_fd(shell->env[i], 1);
+		_putchar('\n', 1);
+		i++;
+	}
 }
