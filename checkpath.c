@@ -2,8 +2,8 @@
 
 /**
  * _getenv - Gets an environment variable
- * name: Name of the variable
- * env: Environment
+ * @name: Name of the variable
+ * @env: Environment
  * Return: Pointer to the variable, NULL if not found
 */
 char *_getenv(const char *name, char **env)
@@ -61,7 +61,7 @@ int is_path(char *cmd)
 
 /**
  * getpath - Gets the path of a command
- * shell: Shell structure
+ * @shell: Shell structure
  * Return: 0 on success, 1 on failure
 */
 int getpath(t_shell *shell)

@@ -2,9 +2,9 @@
 
 /**
  * init_shell - Initializes the shell
- * shell: Shell structure
- * argv: Arguments
- * env: Environment variables
+ * @shell: Shell structure
+ * @argv: Arguments
+ * @env: Environment variables
  */
 void init_shell(t_shell *shell, char **argv, char **env)
 {
@@ -16,9 +16,9 @@ void init_shell(t_shell *shell, char **argv, char **env)
 
 /**
  * main - Entry point
- * argc: Number of arguments
- * argv: Arguments
- * env: Environment variables
+ * @argc: Number of arguments
+ * @argv: Arguments
+ * @env: Environment variables
  * Return: 0 on success, 1 on failure
  */
 int main(int __attribute__((unused)) argc, char **argv, char **env)
@@ -31,6 +31,7 @@ int main(int __attribute__((unused)) argc, char **argv, char **env)
 	{
 		if (isatty(STDIN_FILENO))
 			_putstr_fd("shell~$> ", 1);
+		free(shell.line);
 		if (getline(&shell.line, &len, stdin) == -1)
 		{
 			free(shell.line);
@@ -40,7 +41,6 @@ int main(int __attribute__((unused)) argc, char **argv, char **env)
 			continue;
 		cut_line(shell.line);
 		shell.args = _split(shell.line, " \t\n");
-		free(shell.line);
 		execute(&shell);
 		free_array(shell.args);
 	}

@@ -11,6 +11,14 @@
 
 /* structure */
 
+/**
+ * struct s_shell - Shell structure
+ * @argv: Arguments
+ * @env: Environment variables
+ * @line: Line
+ * @args: Arguments
+ * @status: Status
+ */
 typedef struct s_shell
 {
 char **argv;

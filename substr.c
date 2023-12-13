@@ -1,5 +1,13 @@
 #include "simple_shell.h"
 
+/**
+ * _substr - Gets a substring
+ * @s: String
+ * @start: Start index
+ * @len: Length
+ * Return: Pointer to the substring
+ */
+
 char	*_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*dst;

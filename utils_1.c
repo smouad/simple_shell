@@ -3,6 +3,7 @@
 /**
  * _putchar - Writes a character to stdout
  * @c: Character to write
+ * @fd: File descriptor
  * Return: 1 on success, -1 on error
  */
 int _putchar(char c, int fd)
@@ -13,6 +14,7 @@ int _putchar(char c, int fd)
 /**
  * _putstr_fd - Prints a string
  * @str: String to print
+ * @fd: File descriptor
  * Return: Number of characters printed
  */
 void _putstr_fd(char *str, int fd)

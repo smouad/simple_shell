@@ -2,8 +2,8 @@
 
 /**
  * _strjoin - Gets an environment variable
- * s1: Name of the variable
- * s2: Environment
+ * @s1: Name of the variable
+ * @s2: Environment
  * Return: Pointer to the variable, NULL if not found
 */
 char	*_strjoin(char const *s1, char const *s2)

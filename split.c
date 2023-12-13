@@ -24,8 +24,8 @@ int	_strchr(const char *str, int c)
 
 /**
  * count_words - Counts the number of words in a string
- * str: String
- * c: Delimiters
+ * @str: String
+ * @c: Delimiters
  * Return: Number of words
 */
 static size_t	count_words(const char *str, char *c)
